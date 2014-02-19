@@ -1,17 +1,13 @@
-# Add more folders to ship with the application, here
-folder_01.source = qml/Main
-folder_01.target = qml
-DEPLOYMENTFOLDERS = folder_01
+TEMPLATE = app
+TARGET = QmlVideoApp
 
-# Additional import path used to resolve QML modules in Creator's code model
-QML_IMPORT_PATH =
+QT_QUICK_VIEWER_PATH = $$PWD/../Application/qtquick2applicationviewer
+export (QT_QUICK_VIEWER_PATH)
 
-# The .cpp file which was generated for your project. Feel free to hack it.
+message($$QT_QUICK_VIEWER_PATH)
+
 SOURCES += main.cpp
 
-# Installation path
-# target.path =
-
 # Please do not modify the following two lines. Required for deployment.
-include(qtquick2applicationviewer/qtquick2applicationviewer.pri)
+include($$QT_QUICK_VIEWER_PATH/qtquick2applicationviewer.pri)
 qtcAddDeployment()

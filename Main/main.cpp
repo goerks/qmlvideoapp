@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     QtQuick2ApplicationViewer viewer;
-    viewer.setMainQmlFile(QStringLiteral("qml/Main/main.qml"));
+    viewer.setMainQmlFile(QStringLiteral("../Application/qml/qml/Screen.qml"));
     viewer.showExpanded();
 
     return app.exec();
