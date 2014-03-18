@@ -1,7 +1,16 @@
 TEMPLATE = subdirs
 
+CONFIG += ordered
+
 SUBDIRS += \
-    Tests \
-    Main \
-    Application \
-    Filters
+    application-core \
+    Filters \
+    main-app \
+    unit-tests
+
+OTHER_FILES += \
+    common.pri
+
+# dependencies
+main-app.depends = application-core
+unit-tests.depends = application-core

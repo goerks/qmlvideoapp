@@ -3,13 +3,13 @@ import QtTest 1.0
 
 import "utils.js" as Utils
 
-import "../Application/qml"
+import "../application-core/qml/Core"
 
 Item {
 	width: 100
 	height: 100
 
-	Screen {
+    MainWindow {
 		id: testee
 
 		width: 20
