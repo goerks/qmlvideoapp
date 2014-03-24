@@ -1,7 +1,5 @@
 TEMPLATE = subdirs
 
-CONFIG += ordered
-
 SUBDIRS += \
     application-core \
     Filters \
@@ -13,4 +11,3 @@ OTHER_FILES += \
 
 # dependencies
 main-app.depends = application-core
-unit-tests.depends = application-core
