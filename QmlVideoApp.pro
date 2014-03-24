@@ -2,7 +2,7 @@ TEMPLATE = subdirs
 
 SUBDIRS += \
     application-core \
-    Filters \
+	filters \
     main-app \
     unit-tests
 
