@@ -1,7 +1,7 @@
 QT += qml quick
 
-INCLUDEPATH += $$PWD/include
-DEPENDPATH += $$PWD/include
+INCLUDEPATH += $$PWD/../application-core/include
+DEPENDPATH += $$PWD/../application-core/include
 
 LIBS += -lapplication-core
 
