@@ -6,3 +6,4 @@ SOURCES += \
 
 include(../common.pri)
 include(../application-core/application-core.pri)
+include(../application-core/deployment.pri)

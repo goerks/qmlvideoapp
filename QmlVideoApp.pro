@@ -13,3 +13,6 @@ OTHER_FILES += \
 
 # dependencies
 main-app.depends = application-core
+
+# Do not compile unit-tests for IOs devices (console app is not supported)
+macx-ios-clang: SUBDIRS -= unit-tests filters

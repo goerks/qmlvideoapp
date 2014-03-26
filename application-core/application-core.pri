@@ -3,8 +3,6 @@ QT += qml quick
 INCLUDEPATH += $$PWD/include
 DEPENDPATH += $$PWD/include
 
-#message("Using qmake spec $$QMAKESPEC for building application-core")
-
 win32 {
     CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../application-core/release/ -lapplication-core
     CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../application-core/debug/ -lapplication-core
