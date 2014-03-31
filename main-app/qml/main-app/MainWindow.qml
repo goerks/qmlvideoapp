@@ -1,12 +1,17 @@
 import QtQuick 2.0
 
 Rectangle {
-	id: screen
+	id: root
 
 	width: 360
 	height: 360
 
 	signal clicked
+
+	Connections {
+		target: screen
+		onOrientationChanged: console.log("orientationChanged:" + orientation)
+	}
 
 	Text {
 		text: qsTr("Hello World")
@@ -15,7 +20,7 @@ Rectangle {
 	MouseArea {
 		anchors.fill: parent
 		onClicked: {
-			screen.clicked()
+			root.clicked()
 		}
 	}
 }

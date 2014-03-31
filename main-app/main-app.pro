@@ -3,8 +3,14 @@ TEMPLATE = app
 
 QT += qml quick multimedia
 
+INCLUDEPATH += include
+
 SOURCES += \
-    main.cpp
+    main.cpp \
+    source/screenproxy.cpp
+
+HEADERS += \
+    include/screenproxy.h
 
 RESOURCES += \
     main-app.qrc
