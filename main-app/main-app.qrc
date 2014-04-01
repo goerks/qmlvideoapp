@@ -2,4 +2,10 @@
     <qresource prefix="/">
         <file alias="MainWindow.qml">qml/main-app/MainWindow.qml</file>
     </qresource>
+    <qresource prefix="/components">
+        <file alias="ContentCamera.qml">qml/main-app/components/ContentCamera.qml</file>
+    </qresource>
+    <qresource prefix="/js">
+        <file alias="helper.js">qml/main-app/js/helper.js</file>
+    </qresource>
 </RCC>

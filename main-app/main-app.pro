@@ -16,7 +16,8 @@ RESOURCES += \
     main-app.qrc
 
 OTHER_FILES += \
-    common.pri
+    common.pri \
+    qml/main-app/js/helper.js
 
 # Enable camera service
 QTPLUGIN += qavfcamera

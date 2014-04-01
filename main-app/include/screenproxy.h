@@ -1,8 +1,10 @@
 #ifndef SCREENPROXY_H
 #define SCREENPROXY_H
 
-#include <QtCore/QObject>
-
+#include <QObject>
+#include <QMap>
+#include <QString>
+#include <QtGui/QScreen>
 
 class ScreenProxy : public QObject
 {
@@ -10,8 +12,14 @@ class ScreenProxy : public QObject
 public:
 	explicit ScreenProxy(QObject *parent = 0);
 
+	Q_INVOKABLE QString getOrientation() const;
+
 signals:
 	void orientationChanged(Qt::ScreenOrientation orientation);
+
+private:
+	QScreen				*m_screen;
+	QMap<int, QString>	m_map;
 
 };
 

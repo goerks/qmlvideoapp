@@ -1,20 +1,21 @@
 import QtQuick 2.0
+import "components/"
 
-Rectangle {
+Item {
 	id: root
-
-	width: 360
-	height: 360
 
 	signal clicked
 
-	Connections {
-		target: screen
-		onOrientationChanged: console.log("orientationChanged:" + orientation)
+	ContentCamera {
+		id: camera
+		anchors {
+			fill: parent
+		}
+		state: screen.getOrientation()
 	}
 
 	Text {
-		text: qsTr("Hello World")
+		text: "Width: " + camera.width + " Height: " + camera.height
 		anchors.centerIn: parent
 	}
 	MouseArea {
