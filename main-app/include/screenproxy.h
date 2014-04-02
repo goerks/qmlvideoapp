@@ -8,18 +8,21 @@
 
 class ScreenProxy : public QObject
 {
-	Q_OBJECT
+    Q_OBJECT
 public:
-	explicit ScreenProxy(QObject *parent = 0);
+    explicit ScreenProxy(QObject *parent = 0);
 
-	Q_INVOKABLE QString getOrientation() const;
+    Q_INVOKABLE QString getOrientation() const;
 
 signals:
-	void orientationChanged(Qt::ScreenOrientation orientation);
+    void orientationChanged(QString orientation);
+
+private slots:
+    void mapOrientation(Qt::ScreenOrientation orientation);
 
 private:
-	QScreen				*m_screen;
-	QMap<int, QString>	m_map;
+    QScreen             *m_screen;
+    QMap<int, QString>  m_map;
 
 };
 
