@@ -27,6 +27,7 @@ Item {
 
     Effect {
         targetItem: video
+        shaderFileName: "threshold.fs"
     }
 
     states: [

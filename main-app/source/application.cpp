@@ -6,6 +6,7 @@
 #include <QtQml/QQmlContext>
 
 #include "screenproxy.h"
+#include "filereader.h"
 
 Application::Application()
 {
@@ -19,6 +20,7 @@ int Application::execute(int argc, char * argv[])
     // Set contexts
     QQmlContext *context = view.rootContext();
     context->setContextProperty("screen", new ScreenProxy());
+    context->setContextProperty("fileReader", new FileReader());
 
     view.setResizeMode(QQuickView::SizeRootObjectToView);
     view.setSource(QUrl("qrc:///MainWindow.qml"));
