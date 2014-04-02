@@ -4,6 +4,7 @@
     </qresource>
     <qresource prefix="/components">
         <file alias="ContentCamera.qml">qml/main-app/components/ContentCamera.qml</file>
+        <file alias="FilterMenu.qml">qml/main-app/components/FilterMenu.qml</file>
     </qresource>
     <qresource prefix="/js">
         <file alias="helper.js">qml/main-app/js/helper.js</file>

@@ -17,7 +17,10 @@ RESOURCES += \
 
 OTHER_FILES += \
     common.pri \
-    qml/main-app/js/helper.js
+    qml/main-app/js/helper.js \
+    qml/main-app/components/ContentCamera.qml \
+    qml/main-app/MainWindow.qml \
+    qml/main-app/components/FilterMenu.qml
 
 # Enable camera service
 QTPLUGIN += qavfcamera
