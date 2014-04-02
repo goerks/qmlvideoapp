@@ -37,5 +37,7 @@ Item {
         anchors.bottom: parent.bottom
         menuWidth: parent.width / 4
         color: "#77add9e6"
+        filterModel: camera.availableShaders
+        onChangeFilter: { camera.shaderFileName = filterFilename }
     }
 }

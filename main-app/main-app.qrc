@@ -5,8 +5,14 @@
     <qresource prefix="/components">
         <file alias="ContentCamera.qml">qml/main-app/components/ContentCamera.qml</file>
         <file alias="FilterMenu.qml">qml/main-app/components/FilterMenu.qml</file>
+        <file alias="Effect.qml">qml/main-app/components/Effect.qml</file>
     </qresource>
     <qresource prefix="/js">
         <file alias="helper.js">qml/main-app/js/helper.js</file>
+    </qresource>
+    <qresource prefix="/filters">
+        <file alias="greyscale.fs">filters/greyscale.fs</file>
+        <file alias="identity.fs">filters/identity.fs</file>
+        <file alias="threshold.fs">filters/threshold.fs</file>
     </qresource>
 </RCC>

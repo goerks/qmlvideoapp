@@ -7,6 +7,9 @@ Rectangle {
     state: "closed"
 
     property int menuWidth: 100
+    property ListModel filterModel
+
+    signal changeFilter(string filterFilename)
 
     states: [
         State {
@@ -31,25 +34,19 @@ Rectangle {
             }
         }
 
-    VisualItemModel {
-        id: itemModel
-
-        Button {
-            text: "Filter1"
-            width: parent.width
-        }
-        Button {
-            text: "Filter2"
-            width: parent.width
-        }
-    }
-
     ListView {
         id: view
         anchors.fill: parent
         anchors.margins: swipeButton.width / 2
         spacing: 5
-        model: itemModel
+        model: filterModel
+        delegate:
+            Button {
+                text: name
+                width: parent.width
+                onClicked: root.changeFilter(fileName)
+            }
+
         orientation: ListView.Vertical
         onWidthChanged: {
             console.log("scale changed")
