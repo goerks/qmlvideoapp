@@ -14,7 +14,7 @@ ScreenProxy::ScreenProxy(QObject *parent) :
 
 	m_screen = QGuiApplication::primaryScreen();
 	connect(m_screen, SIGNAL(orientationChanged(Qt::ScreenOrientation)),
-			this, SIGNAL(orientationChanged(Qt::ScreenOrientation)));
+            this, SLOT(orientationChanged(Qt::ScreenOrientation)));
 
 	m_screen->setOrientationUpdateMask(
 				Qt::PortraitOrientation
@@ -26,4 +26,10 @@ ScreenProxy::ScreenProxy(QObject *parent) :
 QString ScreenProxy::getOrientation() const
 {
 	return m_map[m_screen->orientation()];
+}
+
+
+void ScreenProxy::mapOrientation(Qt::ScreenOrientation orientation)
+{
+    emit orientationChanged(m_map[orientation]);
 }
