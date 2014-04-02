@@ -2,8 +2,6 @@
 
 #include <QtGui/QGuiApplication>
 
-#include <map>
-
 ScreenProxy::ScreenProxy(QObject *parent) :
     QObject(parent)
 {
