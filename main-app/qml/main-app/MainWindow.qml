@@ -1,4 +1,5 @@
 import QtQuick 2.0
+import QtQuick.Controls 1.1
 import "components/"
 
 Item {
@@ -34,8 +35,7 @@ Item {
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.bottom: parent.bottom
-        width: 200
-        color: "lightblue"
+        menuWidth: parent.width / 4
+        color: "#77add9e6"
     }
-
 }

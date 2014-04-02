@@ -4,25 +4,22 @@ import QtQuick.Controls 1.1
 Rectangle {
     id: root
 
-    state: "open"
+    state: "closed"
+
+    property int menuWidth: 100
 
     states: [
         State {
             name: "open"
             PropertyChanges {
-                target: root; width: 200
-            }
-            PropertyChanges {
-                target: view; visible: true
+                target: root; width: root.menuWidth
             }
         },
-        State {
+        State
+        {
             name: "closed"
             PropertyChanges {
-                target: root; width: 10
-            }
-            PropertyChanges {
-                target: view; visible: false
+                target: root; width: swipeButton.width
             }
         }
     ]
@@ -39,29 +36,37 @@ Rectangle {
 
         Button {
             text: "Filter1"
+            width: parent.width
         }
         Button {
             text: "Filter2"
+            width: parent.width
         }
     }
 
     ListView {
         id: view
-        anchors { fill: parent; bottomMargin: 30 }
+        anchors.fill: parent
+        anchors.margins: swipeButton.width / 2
+        spacing: 5
         model: itemModel
-        preferredHighlightBegin: 0; preferredHighlightEnd: 0
-        highlightRangeMode: ListView.StrictlyEnforceRange
         orientation: ListView.Vertical
-        snapMode: ListView.SnapOneItem; flickDeceleration: 2000
+        onWidthChanged: {
+            console.log("scale changed")
+            if(width == 0)
+                visible = false
+            else
+                visible = true
+        }
     }
 
     Rectangle {
         id: swipeButton
-        width: 20; height: 20
+        width: menuWidth / 10; height: width * 2
         anchors.right: parent.right
         y: (parent.height - height) / 2
 
-        color: "black"
+        color: "darkblue"
 
         MouseArea {
             id: swipeButtonArea
