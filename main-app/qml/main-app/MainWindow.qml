@@ -4,6 +4,9 @@ import "components/"
 Item {
 	id: root
 
+    width: 640
+    height: 480
+
 	signal clicked
 
 	ContentCamera {
