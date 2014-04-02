@@ -7,10 +7,12 @@ INCLUDEPATH += include
 
 SOURCES += \
     main.cpp \
-    source/screenproxy.cpp
+    source/screenproxy.cpp \
+    source/application.cpp
 
 HEADERS += \
-    include/screenproxy.h
+    include/screenproxy.h \
+    include/application.h
 
 RESOURCES += \
     main-app.qrc
